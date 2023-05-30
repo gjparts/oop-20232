@@ -44,6 +44,28 @@ public class Main {
         Persona p5 = new Persona();
         System.out.println("La direccion de memoria de p5 es "+p5);
         System.out.println("La direccion de memoria de p4 es "+p4);
+        
+        Carro c1 = new Carro("Toyota", "Corolla", 2012, "Blanco");
+        
+        Producto pr1 = new Producto("ABC1", "Coca cola 3L");
+        System.out.println("pr1, nombre: "+pr1.nombre);
+        System.out.println("pr1, codigo: "+pr1.codigo);
+        System.out.println("pr1, fabricante: "+pr1.fabricante);
+        System.out.println("pr1, importado: "+pr1.importado);
+        System.out.println("pr1, existencias: "+pr1.existencias);
+        
+        Ciudad ci1 = new Ciudad("Honduras","Cortés");
+        System.out.println("ci1, pais: "+ci1.pais);
+        System.out.println("ci1, depto: "+ci1.departamento);
+        System.out.println("ci1, munic: "+ci1.municipio);
+        System.out.println("ci1, alcalde: "+ci1.alcalde);
+        
+        Ciudad ci2 = new Ciudad("Honduras","Cortés","SPS","Alguien");
+        System.out.println("ci2, pais: "+ci2.pais);
+        System.out.println("ci2, depto: "+ci2.departamento);
+        System.out.println("ci2, munic: "+ci2.municipio);
+        System.out.println("ci2, alcalde: "+ci2.alcalde);
+        
     }
     
 }

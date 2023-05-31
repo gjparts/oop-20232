@@ -15,6 +15,8 @@ public class Persona {
     public int edad;
     public char genero;
     public String ciudadNacimiento;
+    public boolean trabaja;
+    
     //constructores de la clases
     public Persona(){
         //este es el constructor sin parametros
@@ -22,6 +24,7 @@ public class Persona {
         this.edad = 0;
         this.genero = 'N';
         this.ciudadNacimiento = "no definida";
+        this.trabaja = false;
     }
     public Persona(String nombre, int edad){
         //este es un constructor con dos parametros
@@ -29,6 +32,7 @@ public class Persona {
         this.edad = edad;
         this.genero = 'N';
         this.ciudadNacimiento = "no definida";
+        this.trabaja = false;
     }
     public Persona(String nombre, char genero, String ciudadNacimiento, int edad){
         //este es un constructor con cuatro parametros
@@ -36,5 +40,49 @@ public class Persona {
         this.genero = genero;
         this.nombre = nombre;
         this.ciudadNacimiento = ciudadNacimiento;
+        this.trabaja = false;
+    }
+    //metodos
+    public void imprimir(){
+        System.out.println("*****************");
+        System.out.println("Nombre: "+this.nombre);
+        System.out.println("Edad: "+this.edad);
+        
+        //evaluar el genero usando switch-case
+        System.out.print("Genero: ");
+        switch (this.genero) {
+            case 'M':
+                System.out.println("Masculino");
+                break;
+            case 'F':
+                System.out.println("Femenino");
+                break;
+            case 'N':
+                System.out.println("Otros");
+                break;
+            default:
+                System.out.println("No valido");
+        }
+        
+        //evaluar el genero usando el operador ternario
+        System.out.println("Genero: "+( this.genero == 'M' ? "Masculino" : 
+                ( this.genero == 'F' ? "Femenino" : 
+                ( this.genero == 'N' ? "Otros" : "No valido" ) ) ) );
+        
+        System.out.println("Trabaja: "+( this.trabaja == true ? "Si" : "No" ) );
+        
+        System.out.println("Ciudad de Origen: "+this.ciudadNacimiento);
+    }
+    
+    public void saludar(boolean ciudad){
+        System.out.println("Hola soy "+this.nombre+( ciudad == true ? " soy de "+this.ciudadNacimiento : "" ) );
+    }
+    
+    public double getDescuentoTerceraEdad(){
+        /*if( this.edad >= 60 )
+            return 0.25;
+        else
+            return 0.00;*/
+        return ( this.edad >= 60 ? 0.25 : 0.00 );
     }
 }

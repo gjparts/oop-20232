@@ -66,6 +66,21 @@ public class Main {
         System.out.println("ci2, munic: "+ci2.municipio);
         System.out.println("ci2, alcalde: "+ci2.alcalde);
         
+        //ejecutar el metodo imprimir de p3, p1 y p2
+        p3.trabaja = true;
+        p3.imprimir();
+        p1.imprimir();
+        p2.imprimir();
+        
+        Persona p6 = new Persona("Amy Casita de Vino", 'F', "Londres", 27);
+        p6.trabaja = true;
+        p6.imprimir();
+        
+        p6.saludar(false);
+        p6.saludar(true);
+        
+        System.out.println(p3.nombre+" descuento "+p3.getDescuentoTerceraEdad()*100+"%");
+        System.out.println(p6.nombre+" descuento "+p6.getDescuentoTerceraEdad()*100+"%");
     }
     
 }

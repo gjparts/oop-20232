@@ -26,20 +26,20 @@ public class Main {
         Persona p1 = new Persona();
         //new Persona() es el llamado al constructor de la clase
         p1.nombre = "Gerardo";
-        p1.edad = 40;
-        p1.genero = 'M';
+        p1.setEdad(40);
+        p1.setGenero('M');
         p1.ciudadNacimiento = "Ocotepeque";
         
-        System.out.println(p1.nombre+" "+p1.edad);
+        System.out.println(p1.nombre+" "+p1.getEdad());
         
         Persona p2 = new Persona();
-        System.out.println(p2.nombre+" "+p2.edad);
+        System.out.println(p2.nombre+" "+p2.getEdad());
         
         Persona p3 = new Persona("Filomeno Colinas", 70);
-        System.out.println(p3.nombre+" "+p3.edad+" "+p3.ciudadNacimiento);
+        System.out.println(p3.nombre+" "+p3.getEdad()+" "+p3.ciudadNacimiento);
         
         Persona p4 = new Persona("Estevancito Maravilla", 'M', "en algun lado", 80);
-        System.out.println(p4.nombre+" "+p4.edad+" "+p4.ciudadNacimiento);
+        System.out.println(p4.nombre+" "+p4.getEdad()+" "+p4.ciudadNacimiento);
         
         Persona p5 = new Persona();
         System.out.println("La direccion de memoria de p5 es "+p5);
@@ -81,6 +81,9 @@ public class Main {
         
         System.out.println(p3.nombre+" descuento "+p3.getDescuentoTerceraEdad()*100+"%");
         System.out.println(p6.nombre+" descuento "+p6.getDescuentoTerceraEdad()*100+"%");
+        
+        //establecer una edad no permitida
+        //p6.setEdad(-9);
     }
     
 }

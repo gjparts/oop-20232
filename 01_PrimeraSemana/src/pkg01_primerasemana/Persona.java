@@ -12,8 +12,8 @@ package pkg01_primerasemana;
 public class Persona {
     //atributos o propiedades
     public String nombre;
-    public int edad;
-    public char genero;
+    private int edad;
+    private char genero;
     public String ciudadNacimiento;
     public boolean trabaja;
     
@@ -84,5 +84,35 @@ public class Persona {
         else
             return 0.00;*/
         return ( this.edad >= 60 ? 0.25 : 0.00 );
+    }
+    
+    public int getEdad(){
+        return this.edad;
+    }
+    
+    public void setEdad(int edad){
+        if( edad >= 0 )
+            this.edad = edad;
+        else
+            throw new IllegalArgumentException("La edad debe ser un numero positivo.");
+    }
+    
+    public char getGenero(){
+        return this.genero;
+    }
+    
+    public void setGenero( char genero ){
+        /*switch (genero) {
+            case 'M': case 'F': case 'N':
+                this.genero = genero;
+            break;
+            default:
+                throw new IllegalArgumentException("Genero debe ser M, F, N.");
+        }*/
+        
+        if( genero == 'M' || genero == 'F' || genero == 'N' )
+            this.genero = genero;
+        else
+            throw new IllegalArgumentException("Genero debe ser M, F, N en mayusculas.");
     }
 }

@@ -20,8 +20,8 @@ public class Empleado {
     //constructor
     public Empleado(String nombre, int edad, char genero){
         this.nombre = nombre;
-        this.edad = edad;
-        this.genero = genero;
+        this.setEdad(edad);
+        this.setGenero(genero);
         this.estadoCivil = 'S';
         this.contrato = 'P';
         this.salario = 0.00f;

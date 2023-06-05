@@ -18,11 +18,14 @@ public class Main {
         Empleado e1 = new Empleado("Gerardo",40,'M');
         e1.SetEstadoCivil('C');
         e1.setContrato('P');
+        e1.imprimir();
         Empleado e2 = new Empleado("Irene",40,'F');
         e2.setEdad(39);
         e2.SetEstadoCivil('C');
         e2.setContrato('P');
         e2.setSalario(20000.00f);
+        e2.imprimir();
+        
     }
     
 }

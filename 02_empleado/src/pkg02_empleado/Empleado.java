@@ -7,7 +7,8 @@ package pkg02_empleado;
 
 /**
  *
- * @author Gerardo
+ * @author Gerardo Portillo
+ * @since 2023/06/05
  */
 public class Empleado {
     //atributos
@@ -18,6 +19,15 @@ public class Empleado {
     private char contrato;
     private float salario;
     //constructor
+    /**
+     * Construye un objeto de clase Empleado
+     * @param nombre    nombre del empleado
+     * @param edad      edad del empleado
+     * @param genero    genero del empleado puede ser:
+     *                  M   para Masculino
+     *                  F   para Femenino
+     *                  O   para Otros
+     */
     public Empleado(String nombre, int edad, char genero){
         this.nombre = nombre;
         this.setEdad(edad);

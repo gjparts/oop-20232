@@ -47,5 +47,34 @@ public class Empleado {
             throw new IllegalArgumentException("El genero solo puede ser M, F, O.");
     }
     
+    public char getEstadoCivil(){
+        return this.estadoCivil;
+    }
+    public void SetEstadoCivil(char estadoCivil){
+        if( estadoCivil == 'C' || estadoCivil == 'S' || estadoCivil == 'V' || 
+            estadoCivil == 'D' || estadoCivil == 'U' )
+            this.estadoCivil = estadoCivil;
+        else
+            throw new IllegalArgumentException("El estado civil solo puede ser C, S, V, D, U.");
+    }
     
+    public char getContrato(){
+        return this.contrato;
+    }
+    public void setContrato(char contrato){
+        if( contrato == 'P' || contrato == 'T' || contrato == 'H' )
+            this.contrato = contrato;
+        else
+           throw new IllegalArgumentException("El contrato solo puede ser P, T, H."); 
+    }
+    
+    public float getSalario(){
+        return this.salario;
+    }
+    public void setSalario( float salario ){
+        if( salario >= 0 )
+            this.salario = salario;
+        else
+            throw new IllegalArgumentException("Salario debe ser mayor o igual que cero."); 
+    }
 }

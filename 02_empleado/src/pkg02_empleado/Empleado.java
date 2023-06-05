@@ -77,4 +77,29 @@ public class Empleado {
         else
             throw new IllegalArgumentException("Salario debe ser mayor o igual que cero."); 
     }
+    
+    public void imprimir(){
+        System.out.println("******* EMPLEADO *******");
+        System.out.println("Nombre: "+this.nombre);
+        //System.out.println("Edad: "+this.getEdad()); //es correcto
+        System.out.println("Edad: "+this.edad);
+        
+        System.out.print("Estado Civil: ");
+        switch(this.estadoCivil){
+          case 'S': System.out.println("Soltero"); break;
+          case 'C': System.out.println("Casado"); break;
+          case 'V': System.out.println("Viudo"); break;
+          case 'D': System.out.println("Divorciado"); break;
+          case 'U': System.out.println("Union Libre"); break;
+        }
+        
+        System.out.println( "Genero: "+(this.genero == 'M' ? "Masculino" :
+                            this.genero == 'F' ? "Femenino" : "Otros") );
+        
+        System.out.print("Contrato: ");
+        if( this.contrato == 'P' ) System.out.println("Permanente");
+        if( this.contrato == 'T' ) System.out.println("Temporal");
+        if( this.contrato == 'H' ) System.out.println("Por Hora");
+        System.out.println("Salario: "+this.salario);
+    }
 }

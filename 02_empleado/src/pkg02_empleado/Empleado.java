@@ -6,7 +6,6 @@
 package pkg02_empleado;
 
 /**
- *
  * @author Gerardo Portillo
  * @since 2023/06/05
  */
@@ -37,29 +36,67 @@ public class Empleado {
         this.salario = 0.00f;
     }
     //metodos
+    /**
+     * retorna la edad del empleado
+     * @return numero entero representando la edad
+     */
     public int getEdad(){
         return this.edad;
     }
+    /**
+     * asigna la edad al empleado
+     * @param edad debe ser un numero entero mayor o igual que cero.
+     */
     public void setEdad(int edad){
         if( edad >= 0 )
             this.edad = edad;   //si la edad es numero positivo la aceptamos
         else
             throw new IllegalArgumentException("La edad debe ser numero positivo.");
     }
-    
+    /**
+     * retorna el genero del empleado
+     * @return un valor char que puede ser:
+     *          M Masculino,
+     *          F Femenino,
+     *          O Otros
+     */
     public char getGenero(){
         return this.genero;
     }
+    /**
+     * define el genero del empleado
+     * @param genero un valor char que puede ser:
+     *          M Masculino,
+     *          F Femenino,
+     *          O Otros
+     */
     public void setGenero(char genero){
         if( genero == 'M' || genero == 'F' || genero == 'O' )
             this.genero = genero;   //si el genero es M F O lo aceptamos
         else
             throw new IllegalArgumentException("El genero solo puede ser M, F, O.");
     }
-    
+    /**
+     * retorna el estado civil del empleado
+     * @return un valor char que puede ser:
+     *          C   Casado,
+     *          S   Soltero,
+     *          V   Viudo,
+     *          D   Divorciado
+     *          U   Union Libre
+     */
     public char getEstadoCivil(){
         return this.estadoCivil;
     }
+    /**
+     * define el estado civil del empleado
+     * @param estadoCivil un valor char que puede ser:
+     *          C   Casado,
+     *          S   Soltero,
+     *          V   Viudo,
+     *          D   Divorciado
+     *          U   Union Libre
+     */
     public void SetEstadoCivil(char estadoCivil){
         if( estadoCivil == 'C' || estadoCivil == 'S' || estadoCivil == 'V' || 
             estadoCivil == 'D' || estadoCivil == 'U' )
@@ -67,27 +104,49 @@ public class Empleado {
         else
             throw new IllegalArgumentException("El estado civil solo puede ser C, S, V, D, U.");
     }
-    
+    /**
+     * retorna las condiciones de la contratacion del empleado
+     * @return un valor char que puede ser:
+     *          P   Empleado Permanente
+     *          T   Empleado Temporal
+     *          H   Empleado por Hora
+     */
     public char getContrato(){
         return this.contrato;
     }
+    /**
+     * define el tipo de contratacion del empleado
+     * @param contrato un valor char que puede ser:
+     *          P   Empleado Permanente
+     *          T   Empleado Temporal
+     *          H   Empleado por Hora
+     */
     public void setContrato(char contrato){
         if( contrato == 'P' || contrato == 'T' || contrato == 'H' )
             this.contrato = contrato;
         else
            throw new IllegalArgumentException("El contrato solo puede ser P, T, H."); 
     }
-    
+    /**
+     * retorna el salario bruto devengado por el empleado
+     * @return un valor float mayor o igual que cero.
+     */
     public float getSalario(){
         return this.salario;
     }
+    /**
+     * define el salario bruto devengado por el empleado
+     * @param salario un valor float mayor o igual que cero.
+     */
     public void setSalario( float salario ){
         if( salario >= 0 )
             this.salario = salario;
         else
             throw new IllegalArgumentException("Salario debe ser mayor o igual que cero."); 
     }
-    
+    /**
+     * imprime en la consola de texto la ficha del empleado
+     */
     public void imprimir(){
         System.out.println("******* EMPLEADO *******");
         System.out.println("Nombre: "+this.nombre);

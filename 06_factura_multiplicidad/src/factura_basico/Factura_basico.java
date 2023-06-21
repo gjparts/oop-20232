@@ -27,23 +27,28 @@ public class Factura_basico {
         Producto p2 = new Producto("Jamon 1/2Lb", cp2, 45.00f);
         Producto p3 = new Producto("Coca Cola 3L", cp3, 65.00f);
         
-        Factura f1 = new Factura(1, "2023/06/19", c1, p1);
+        //productos de f1
+        Producto[] pf1 = {p1};
+        Factura f1 = new Factura(1, "2023/06/19", c1, pf1);
         f1.imprimir();
         
-        Factura f2 = new Factura(2,"2023/06/20",c3,p2);
-        f2.producto2 = p3;
-        f2.producto3 = p2;
+        Producto[] pf2 = { p2, null, p3, p2, null, null };
+        Factura f2 = new Factura(2,"2023/06/20",c3,pf2);
         f2.imprimir();
         
-        Factura f3 = new Factura(3,"2023/06/20",c2,p1);
-        f3.producto3 = p1;
-        f3.producto4 = p1;
+        //crear un objeto al momento de hacer el arreglo (Algo)
+        Producto[] pf3 = { p1, null, p1, p1, new Producto("Algo", cp1, 1) };
+        Factura f3 = new Factura(3,"2023/06/20",c2,pf3);
         f3.imprimir();
+        //imprimir el producto que se llama Algo que esta en f3
+        System.out.print("Quinto item dentro de arreglo: ");
+        System.out.println( pf3[4].nombre );
+        System.out.print("Quinto item dentro de arreglo: ");
+        System.out.println( f3.getProductos()[4].nombre );
         
-        Factura f4 = new Factura(4,"2023/06/20",c3,p3);
-        f4.producto4 = p3;
-        f4.producto2 = p1;
-        f4.producto3 = p2;  f4.imprimir();
+        Producto[] pf4 = {p3, p3, p1, p2};
+        Factura f4 = new Factura(4,"2023/06/20",c3, pf4 );
+        f4.imprimir();
     }
     
 }

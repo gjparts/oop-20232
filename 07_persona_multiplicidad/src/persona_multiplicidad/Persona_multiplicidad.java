@@ -40,6 +40,33 @@ public class Persona_multiplicidad {
         p1.direccion = d3;
         p1.imprimir();
         
+        Persona p2 = new Persona("11111111","Estevancito Maravilla",12341234);
+        p2.direccion = new Direccion(fesitranh);
+        p2.direccion.calle = "Principal";
+        p2.direccion.bloque = "X";
+        p2.empresaLabora = new Empresa("LACTOHSA", new Direccion(jardines), 55555555);
+        p2.empresaLabora.getDireccion().avenida = "Avenida a Migracion";
+        p2.empresaLabora.getDireccion().calle = "Calle a Jardines del Valle";
+        
+        //arreglo de mascotas
+        Mascota firulais = new Mascota("Firulais", "Perro");
+        Mascota chispita = new Mascota("Chispita", "Gato");
+        Mascota[] arr1 = {firulais, chispita};
+        p2.mascotas = arr1;
+
+        p2.imprimir();
+        
+        Persona p3 = new Persona("8888888888", "Curco Bain", 98765432);
+        Mascota m123 = new Mascota("Nepomusemo", "Pez");
+        Mascota[] arr2 = { new Mascota("Doris", "Pez"), m123 };
+        p3.mascotas = arr2;
+        p3.mascotas[0].especie = "Pez Exotico"; //se puede cambiar objetos en array
+        p3.imprimir();
+        
+        Persona p4 = new Persona("8765432", "Filomeno Colinas", 321654798);
+        Mascota m543 = new Mascota("Terencio", "Loro");
+        p4.mascotas = new Mascota[]{ m543 };    //crear un arreglo en el momento de uso
+        p4.imprimir();
     }
     
 }

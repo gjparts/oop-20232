@@ -4,6 +4,7 @@ package persona_multiplicidad;
  * @author Gerardo Portillo
  * @since  2023-06-26
  */
+import java.util.LinkedList;    //Lista vinculada
 public class Persona {
     //atributos
     public String identidad;
@@ -12,6 +13,10 @@ public class Persona {
     public Direccion direccion;
     public Empresa empresaLabora;
     public Mascota[] mascotas;
+    //la siguiente es una coleccion de objetos
+    //con restriccion de tipo a solo aceptar
+    //objetos de clase Diploma
+    public LinkedList<Diploma> diplomas;
     //constructor
     public Persona(String identidad, String nombre, int telefono){
         this.identidad = identidad;
@@ -20,6 +25,7 @@ public class Persona {
         this.direccion = null;
         this.empresaLabora = null;
         this.mascotas = null;
+        this.diplomas = null;
     }
     //metodos
     public void imprimir(){

@@ -25,7 +25,9 @@ public class Persona {
         this.direccion = null;
         this.empresaLabora = null;
         this.mascotas = null;
-        this.diplomas = null;
+        //inicializamos la lista vinculada de diplomas
+        //para que este lista para su uso.
+        this.diplomas = new LinkedList();
     }
     //metodos
     public void imprimir(){
@@ -92,6 +94,26 @@ public class Persona {
                         System.out.println( "\tMascota "+(i+1) );
                         System.out.println("\t\tNombre: "+this.mascotas[i].nombre);
                         System.out.println("\t\tEspecie: "+this.mascotas[i].especie);
+                    }
+                }
+            }
+        }
+        
+        //validar su es null el LinkedList de diplomas
+        System.out.println("Diplomas **************");
+        if( this.diplomas == null )
+            System.out.println("\tNo tiene diplomas.");
+        else{
+            if( this.diplomas.size() == 0 )
+                //si no hay diplomas:
+                System.out.println("\tNo tiene diplomas.");
+            else{
+                //hay diplomas, recorrer la lista e imprimirlos
+                //uno a uno si son diferentes de null.
+                for( int i = 0; i < this.diplomas.size(); i++ ){
+                    if( this.diplomas.get(i) != null ){
+                        System.out.println("\tInstitucion: "+this.diplomas.get(i).institucion);
+                        System.out.println("\tNombre: "+this.diplomas.get(i).nombre);
                     }
                 }
             }

@@ -93,6 +93,16 @@ public class Persona_multiplicidad {
         //borrar todos los diplomas (size regresa a cero)
         p4.diplomas.clear();
         
+        //conyuge de persona 4
+        Persona p5 = new Persona("11112222","Fulgencia Colinas",4444444);
+        p4.conyuge = p5;
+        
+        //hijo de persona 4
+        Persona p6 = new Persona("987654322","Pericles Colinas",12348765);
+        p4.hijos.push(p6);
+        //otro hijo para persona 4
+        p4.hijos.push( new Persona("54329876","Donovan Colinas",0) );
+        
         p4.imprimir();
     }
     

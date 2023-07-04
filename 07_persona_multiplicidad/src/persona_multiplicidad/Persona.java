@@ -12,11 +12,14 @@ public class Persona {
     public int telefono;
     public Direccion direccion;
     public Empresa empresaLabora;
-    public Mascota[] mascotas;
+    public Mascota[] mascotas;  //multiplicidad
     //la siguiente es una coleccion de objetos
     //con restriccion de tipo a solo aceptar
     //objetos de clase Diploma
-    public LinkedList<Diploma> diplomas;
+    public LinkedList<Diploma> diplomas; //multiplicidad
+    //referencias circulares: objeto de la misma clase a la que pertenecen
+    public Persona conyuge;
+    public LinkedList<Persona> hijos;   //multiplicidad y ref.circular    
     //constructor
     public Persona(String identidad, String nombre, int telefono){
         this.identidad = identidad;
@@ -25,9 +28,13 @@ public class Persona {
         this.direccion = null;
         this.empresaLabora = null;
         this.mascotas = null;
+        this.conyuge = null;
         //inicializamos la lista vinculada de diplomas
         //para que este lista para su uso.
         this.diplomas = new LinkedList();
+        //inicializar la lista vinculada de hijos
+        //para que quede lista para usar
+        this.hijos = new LinkedList();
     }
     //metodos
     public void imprimir(){
@@ -50,6 +57,36 @@ public class Persona {
             System.out.println("\tAve.: "+this.direccion.avenida);
             System.out.println("\tBloque: "+this.direccion.bloque);
             System.out.println("\tCasa: "+this.direccion.casa);
+        }
+        
+        //conyuge
+        System.out.print("Conyuge: ");
+        if( this.conyuge == null )
+            System.out.println("No tiene.");
+        else{
+            System.out.println( this.conyuge.nombre );
+            System.out.println("\tIdentidad: "+this.conyuge.identidad);
+            System.out.println("\tTelefono: "+this.conyuge.telefono);
+        }
+        
+        //hijos (validar que no viene null)
+        System.out.println("Hijos : *************");
+        if( this.hijos == null )
+            System.out.println("\tNo tiene");
+        else{
+            //validar que tenga hijos (longitud > 0)
+            if( this.hijos.size() == 0 )
+                System.out.println("\tNo tiene");
+            else{
+                //recorrer el LisnkedList de hijos, validar
+                //cada hijo que no sea null si lo es entonces ignorarlo.
+                for( int i = 0; i < this.hijos.size(); i++ )
+                {
+                    if( this.hijos.get(i) != null ){
+                        System.out.println("* Nombre: "+this.hijos.get(i).nombre);
+                    }
+                }
+            }
         }
         
         //validar si viene o no la empresa donde labora

@@ -10,7 +10,14 @@ public class Persona {
     public String nombre;
     public int edad;
     public char genero;
-    //constructor
+    //constructores
+    //sin parametros
+    public Persona(){
+        this.nombre = "A saber";
+        this.edad = 99;
+        this.genero = 'N';
+    }
+    //con parametros
     public Persona(String nombre, int edad, char genero){
         this.nombre = nombre;
         this.edad = edad;

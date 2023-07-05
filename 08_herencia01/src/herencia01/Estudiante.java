@@ -1,5 +1,7 @@
 package herencia01;
 
+
+
 /**
  *
  * @author Gerardo Portillo
@@ -11,7 +13,8 @@ public class Estudiante extends Persona {
     public String cuenta;
     public String carrera;
     //constructor
-    public Estudiante(String cuenta, String nombre, String carrera){
+    public Estudiante(String cuenta, String nombre,
+            String carrera){
         //construir la super clase (clase padre)
         super(nombre, 0, 'X');
         

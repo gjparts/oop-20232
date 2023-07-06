@@ -33,6 +33,11 @@ public class Herencia01 {
         System.out.println("El salario de "+prac1.nombre+" es "+prac1.salario);
         prac1.salario = 3000;
         System.out.println("El nuevo salario ahora es "+prac1.salario);
+        
+        Catedratico cat1 = new Catedratico("Kurko Bain", 45, 'M', 15000, "Ing. de Sonido");
+        cat1.saludar();
+        cat1.trabajar();
+        cat1.educar();
     }
     
 }

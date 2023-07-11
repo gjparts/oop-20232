@@ -7,7 +7,7 @@ package sistema_archivos;
  */
 public class Media extends Archivo {
     //atributos
-    public Autor autor;
+    private Autor autor;
     public int duracion;
     //constructor
     public Media(){
@@ -23,11 +23,17 @@ public class Media extends Archivo {
         super(nombre, tamano, "Archivo de medios" , extension, fecha);
         //atributos de esta clase
         //autor obligatorio
-        if( autor == null )
-            throw new IllegalArgumentException("Debe enviar el autor");
-        else
-            this.autor = autor;
-        
+        this.setAutor(autor);
         this.duracion = duracion;
+    }
+    //metodos
+    public void setAutor(Autor autor){
+        if( autor != null )
+            this.autor = autor;
+        else
+            throw new IllegalArgumentException("El autor debe ser un objeto");
+    }
+    public Autor getAutor() {
+        return this.autor;
     }
 }

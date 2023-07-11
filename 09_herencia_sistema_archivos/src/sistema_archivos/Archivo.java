@@ -25,6 +25,9 @@ public class Archivo {
     public String getTipo() {
         return this.tipo;
     }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     public void imprimir(){
         System.out.println("********** ARCHIVO **********");
         System.out.println("Nombre: "+this.nombre);

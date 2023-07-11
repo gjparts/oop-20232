@@ -1,23 +1,17 @@
 package sistema_archivos;
-
 /**
  *
  * @author Gerardo Portillo
- * @since  2023-07-10
+ * @since  2023-07-11
  */
-public class Documento extends Archivo {
+public class Subtitulo {
     //atributos
     private Autor autor;
-    public int palabras;
+    public String lenguaje;
     //constructor
-    public Documento(String nombre, int tamano, String fecha,
-                    String extension, Autor autor, int palabras){
-        //construir la super clase
-        super(nombre, tamano, "Documento", extension, fecha);
-        
-        //inicializar los atributos de esta clase
+    public Subtitulo(Autor autor, String lenguaje){
         this.setAutor(autor);
-        this.palabras = palabras;
+        this.lenguaje = lenguaje;
     }
     //metodos
     public void setAutor(Autor autor){

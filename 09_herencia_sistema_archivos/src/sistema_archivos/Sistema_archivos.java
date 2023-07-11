@@ -14,14 +14,20 @@ public class Sistema_archivos {
         
         Media md1 = new Media();
         md1.imprimir();
-        System.out.println("Autor: "+md1.autor.nombre);
+        System.out.println("Autor: "+md1.getAutor().nombre);
         
         Media md2 = new Media("img.png", 15123, "2023-07-10", 
                 "png", aut1, 0);
         md2.imprimir();
-        md2.autor = null;
-        System.out.println("Autor: "+md2.autor.nombre);
-        System.out.println("Autor (correo): "+md2.autor.email);
+        md2.setAutor(new Autor("Alicia Cobra","alicia@cooper.com"));
+        System.out.println("Autor: "+md2.getAutor().nombre);
+        System.out.println("Autor (correo): "+md2.getAutor().email);
+        
+        Audio au1 = new Audio("Come Undone.mp3", 3256128, "2023-07-11", "mp3", 
+                aut1, 205, "Duran Duran", "The Wedding Album", 1984, 3);
+        au1.imprimir();
+        System.out.println("Artista de au1: "+au1.artista);
+        System.out.println("Autor de au1: "+au1.getAutor().nombre);
     }
     
 }

@@ -28,6 +28,17 @@ public class Sistema_archivos {
         au1.imprimir();
         System.out.println("Artista de au1: "+au1.artista);
         System.out.println("Autor de au1: "+au1.getAutor().nombre);
+        
+        Video v1 = new Video("Akira", 123456, "1989/1/1", "mp4", 
+                new Autor("Katsuhiro Otomo",""), 120, "h264");
+        //canales de idioma de v1
+        String[] canalesAudio1 = { "Ingles", "Español" };
+        v1.audio = canalesAudio1;
+        //subtitulos de v1
+        Subtitulo st1 = new Subtitulo(aut1, "Chino");
+        v1.subtitulos.push( new Subtitulo(new Autor("GNula",""), "Español") );
+        v1.subtitulos.push( new Subtitulo(aut1, "Ingles") );
+        v1.subtitulos.push( st1 );
     }
     
 }

@@ -9,7 +9,13 @@ public class Polimorfismo1 {
         
         Gato g1 = new Gato("Neko", true, true);
         g1.imprimir();
+        g1.ronronear();
         g1.hablar();
+        
+        Perro p1 = new Perro("Firulais", true, "Mixto");
+        p1.imprimir();
+        p1.jugar();
+        p1.hablar();
     }
     
 }

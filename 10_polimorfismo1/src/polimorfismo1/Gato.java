@@ -23,10 +23,14 @@ public class Gato extends Animal {
     //Polimorfismo: superponer metodos de la clase padre.
     @Override
     public void hablar(){
+        //override completo: no reutiliza el metodo al que hace
+        //override
         System.out.println("marra miauuuu");
     }
     @Override
     public void imprimir(){
+        //override parcial: reutiliza el metodo al que hace
+        //override
         //polimorfismo tambien permite reutilizar el codigo
         //del metodo heredado para darle continuidad al mismo
         super.imprimir();   //ejecuta el metodo imprimir de la super clase
